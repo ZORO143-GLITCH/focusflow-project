@@ -1,0 +1,129 @@
+.page { display: flex; flex-direction: column; gap: 24px; animation: fade-in .25s ease; }
+
+.topRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.heading { font-size: 22px; font-weight: 600; color: var(--text); letter-spacing: -0.5px; }
+.sub     { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+.addRow { display: flex; gap: 10px; }
+.input {
+  width: 300px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 9px 14px;
+  color: var(--text);
+  font-size: 13px;
+  transition: border-color .15s, background .15s;
+}
+.input::placeholder { color: var(--muted); }
+.input:focus { border-color: var(--indigo); background: var(--indigo-lt); }
+
+.addBtn {
+  display: flex; align-items: center; gap: 7px;
+  background: var(--indigo); color: #fff;
+  padding: 9px 16px; border-radius: var(--r-md);
+  font-size: 13px; font-weight: 500;
+  white-space: nowrap;
+  transition: background .15s;
+}
+.addBtn:hover { background: var(--indigo-dim); }
+
+/* stats bar */
+.statsBar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.statPill {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 10px 18px;
+}
+.statPill.amber { border-color: rgba(251,191,36,0.15); background: var(--amber-bg); }
+.statPill.green { border-color: rgba(52,211,153,0.15); background: var(--green-bg); }
+.statPill.indigo{ border-color: rgba(99,102,241,0.15); background: var(--indigo-lt); }
+
+.statVal   { font-family: var(--mono); font-size: 18px; font-weight: 500; color: var(--text); }
+.statLabel { font-size: 12px; color: var(--muted); }
+.statPill.amber .statVal  { color: var(--amber); }
+.statPill.green .statVal  { color: var(--green); }
+.statPill.indigo .statVal { color: var(--indigo); }
+
+/* two-column grid */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+.column { display: flex; flex-direction: column; gap: 10px; }
+
+.colHeader { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.colDot    { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.colTitle  { font-size: 13px; font-weight: 600; color: var(--text-2); }
+.colCount  {
+  font-family: var(--mono); font-size: 11px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1px 7px; color: var(--muted);
+}
+
+.empty {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  padding: 40px 20px;
+  background: var(--card); border: 1px dashed var(--border); border-radius: var(--r-lg);
+  color: var(--subtle); font-size: 13px; text-align: center;
+}
+
+/* task card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 14px 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+  animation: slide-up .2s ease both;
+}
+.card:hover    { border-color: var(--border-hi); background: var(--card-hover); }
+.card.cardActive{ border-color: var(--indigo); background: var(--indigo-lt); }
+.card.cardDone { opacity: .45; }
+
+.cardLeft { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; }
+
+.check {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 1.5px solid var(--subtle); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .15s;
+}
+.check:hover   { border-color: var(--indigo); }
+.check.checked { background: var(--green); border-color: var(--green); }
+
+.cardInfo { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.cardName {
+  font-size: 14px; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.cardName.struck { text-decoration: line-through; color: var(--muted); }
+.cardStatus { font-size: 11px; color: var(--muted); }
+
+.focusQuickBtn {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--indigo-lt); color: var(--indigo);
+  border: 1px solid rgba(99,102,241,0.2);
+  padding: 5px 11px; border-radius: var(--r-sm);
+  font-size: 12px; font-weight: 500; white-space: nowrap; flex-shrink: 0;
+  transition: background .15s;
+}
+.focusQuickBtn:hover { background: rgba(99,102,241,0.15); }
+
+.activeBadge {
+  background: var(--indigo); color: #C7D2FE;
+  font-size: 10px; font-weight: 600;
+  padding: 3px 9px; border-radius: 20px; flex-shrink: 0;
+}

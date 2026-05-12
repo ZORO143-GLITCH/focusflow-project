@@ -1,0 +1,83 @@
+.sidebar {
+  width: var(--sidebar-w);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 14px;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px 24px;
+}
+.logoIcon {
+  width: 34px; height: 34px;
+  background: var(--indigo-lt);
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: var(--r-md);
+  display: flex; align-items: center; justify-content: center;
+}
+.logoText {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+.navLabel {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 10px 8px;
+}
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: var(--r-md);
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  transition: background .15s, color .15s;
+}
+.navItem:hover { background: var(--card); color: var(--text-2); }
+.navItem.active { background: var(--indigo-lt); color: var(--indigo); }
+.navItem.active .navIcon { color: var(--indigo); }
+.navIcon { color: var(--muted); display: flex; align-items: center; transition: color .15s; }
+
+.activeDot {
+  position: absolute;
+  right: 12px;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--indigo);
+  animation: pulse-dot 1.4s infinite;
+}
+
+.sidebarFooter { padding-top: 16px; border-top: 1px solid var(--border); }
+.footerCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 12px 14px;
+  display: flex; flex-direction: column; gap: 3px;
+}
+.footerTitle { font-size: 12px; font-weight: 500; color: var(--text-2); }
+.footerSub   { font-size: 11px; color: var(--muted); }
